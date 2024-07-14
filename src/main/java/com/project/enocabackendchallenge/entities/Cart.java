@@ -14,9 +14,16 @@ public class Cart extends BaseEntity {
     private double totalPrice;
 
     @OneToOne
-    @JoinColumn(name = "customer_id",unique = true)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL)
-    private List<CartItem> cartItems=new ArrayList<>();
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    private List<CartItem> cartItems;
+
+    public Cart() {
+    }
+
+    public Cart(Customer customer) {
+        this.customer = customer;
+    }
 }

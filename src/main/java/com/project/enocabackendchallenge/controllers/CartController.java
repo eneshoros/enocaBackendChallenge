@@ -1,8 +1,6 @@
 package com.project.enocabackendchallenge.controllers;
 
 import com.project.enocabackendchallenge.entities.Cart;
-import com.project.enocabackendchallenge.entities.CartItem;
-import com.project.enocabackendchallenge.requests.AddProductToCartRequest;
 import com.project.enocabackendchallenge.services.CartService;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,22 +16,12 @@ public class CartController {
 
     @GetMapping("/{id}")
     public Cart getCartById(@PathVariable Long id) {
-        return cartService.getCardById(id);
+        return cartService.getCartById(id);
     }
 
-    @PutMapping("/update")
-    public Cart updateCart(@RequestBody Cart cart) {
-        return cartService.updateCard(cart);
-    }
-
-    @PostMapping("/add-product")
-    public Cart addProductToCart(@RequestBody AddProductToCartRequest newRequest) {
-        return cartService.addProductToCart(newRequest);
-    }
-
-    @DeleteMapping("/{cartId}/remove-product/{cartItemId}")
-    public Cart removeProductFromCart(@PathVariable Long cartId, @PathVariable Long cartItemId) {
-        return cartService.removeProductFromCart(cartId, cartItemId);
+    @PostMapping("/{customerId}/create-cart")
+    public Cart createCartForCustomer(@PathVariable Long customerId) {
+        return cartService.createCart(customerId);
     }
 
     @PutMapping("/{cartId}/empty")

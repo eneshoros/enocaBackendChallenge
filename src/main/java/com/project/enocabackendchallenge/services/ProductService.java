@@ -18,16 +18,17 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public Product getProductById(Long id){
-        return productRepository.findById(id).orElse(null);
+    public Product getProductById(Long productId) {
+        return productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Ürün bulunamadı"));
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    public Product createProduct(ProductCreateRequest productCreateRequest){
-        Product product=new Product();
+    public Product createProduct(ProductCreateRequest productCreateRequest) {
+        Product product = new Product();
 
         product.setName(productCreateRequest.getName());
         product.setPrice(productCreateRequest.getPrice());
@@ -36,8 +37,8 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public Product updateProduct(Long id,Product product){
-        Product existingProduct=getProductById(id);
+    public Product updateProduct(Long id, Product product) {
+        Product existingProduct = getProductById(id);
 
         existingProduct.setName(product.getName());
         existingProduct.setPrice(product.getPrice());
@@ -46,7 +47,7 @@ public class ProductService {
         return productRepository.save(existingProduct);
     }
 
-    public void deleteProduct(Long id){
+    public void deleteProduct(Long id) {
         productRepository.deleteById(id);
     }
 }

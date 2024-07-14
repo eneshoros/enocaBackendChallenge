@@ -13,10 +13,7 @@ public class Customer extends BaseEntity {
     private String name;
     private String email;
 
-    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "customer", cascade = CascadeType.ALL)
     private Cart cart;
-
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    private List<Order> orders;
 
 }

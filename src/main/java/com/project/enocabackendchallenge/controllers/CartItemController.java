@@ -1,6 +1,8 @@
 package com.project.enocabackendchallenge.controllers;
 
+import com.project.enocabackendchallenge.entities.Cart;
 import com.project.enocabackendchallenge.entities.CartItem;
+import com.project.enocabackendchallenge.requests.AddProductToCartRequest;
 import com.project.enocabackendchallenge.services.CartItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,10 +22,10 @@ public class CartItemController {
         this.cartItemService = cartItemService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<CartItem>> getAllCartItems() {
+    @GetMapping("/all")
+    public List<CartItem> getAllCartItems() {
         List<CartItem> cartItems = cartItemService.getAllCartItems();
-        return new ResponseEntity<>(cartItems, HttpStatus.OK);
+        return cartItems;
     }
 
     @GetMapping("/{id}")
@@ -32,14 +34,24 @@ public class CartItemController {
         return new ResponseEntity<>(cartItem, HttpStatus.OK);
     }
 
-    @PostMapping("/{cartId}/add")
-    public CartItem addCartItem(@PathVariable Long cartId,@RequestBody CartItem cartItem) {
-        return cartItemService.addCartItem(cartId,cartItem);
+    @PostMapping("/add")
+    public CartItem AddProductToCart(@RequestBody AddProductToCartRequest newRequest) {
+        return cartItemService.addProductToCart(newRequest);
     }
 
-    @PutMapping("/{cartItemId}/update")
-    public CartItem updateCartItem(@PathVariable Long cartItemId, @RequestParam int quantity) {
-        return cartItemService.updateCartItem(cartItemId,quantity);
+    @PutMapping("/update/{id}")
+    public CartItem updateCartItem(@PathVariable("id") Long id, @RequestBody AddProductToCartRequest newRequest) {
+        return cartItemService.updateCartItem(id, newRequest);
+    }
+
+    @PutMapping("/{cartItemId}/empty")
+    public void emptyCart(@PathVariable Long cartItemId) {
+        cartItemService.emptyCartItem(cartItemId);
+    }
+
+    @DeleteMapping("/{cartId}/remove-product/{cartItemId}")
+    public Cart removeProductFromCart(@PathVariable Long cartId, @PathVariable Long cartItemId) {
+        return cartItemService.removeProductFromCart(cartId, cartItemId);
     }
 
     @DeleteMapping("/{id}")

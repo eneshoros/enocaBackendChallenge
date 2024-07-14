@@ -15,17 +15,17 @@ public class ProductController {
     private final ProductService productService;
 
     @Autowired
-    public ProductController(ProductService productService){
-        this.productService=productService;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id){
+    public Product getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
 
     @GetMapping("/all")
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
@@ -35,8 +35,8 @@ public class ProductController {
     }
 
     @PutMapping("/{productId}/update")
-    public Product updateProduct(@PathVariable Long productId,@RequestBody Product product) {
-        return productService.updateProduct(productId,product);
+    public Product updateProduct(@PathVariable Long productId, @RequestBody Product product) {
+        return productService.updateProduct(productId, product);
     }
 
     @DeleteMapping("/delete/{id}")
