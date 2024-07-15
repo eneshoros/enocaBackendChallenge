@@ -43,10 +43,10 @@ Projeyi çalıştırmak için aşağıdaki yazılımların yüklü olması gerek
    Uygulama başarıyla başlatıldıktan sonra, API'ye aşağıdaki URL üzerinden erişebilirsiniz:
    
    ```bash
-   http://localhost:8080/api
+   http://localhost:8080/apiName
    ```
    
-   API dokümantasyonu ve kullanımı için buraya bakabilirsiniz.
+   API dokümantasyonu ve kullanımı için [buraya](https://github.com/eneshoros/enocaBackendChallenge/blob/master/apiDocumentation.md) bakabilirsiniz.
 
 ---
 Bu README dosyası, projeyle ilgili temel bilgileri sunarak projeyi yerel makinenizde başlatma adımlarını açıklar.
