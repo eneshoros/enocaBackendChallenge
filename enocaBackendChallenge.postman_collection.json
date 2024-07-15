@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "cb8c1712-3266-4fb5-8f2c-d1ffb9cb469f",
+		"name": "enocaBackendChallenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32723780"
+	},
+	"item": [
+		{
+			"name": "addCustomer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Enes Horos\",\r\n    \"email\": \"eneshoros@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/customers/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customers",
+						"add"
+					]
+				},
+				"description": "Müşteri eklemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "getProductById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Not Defteri\",\r\n    \"price\": 34.99,\r\n    \"stockQuantity\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"2"
+					]
+				},
+				"description": "Tek bir ürüne erişim için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProducts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Not Defteri\",\r\n    \"price\": 34.99,\r\n    \"stockQuantity\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"all"
+					]
+				},
+				"description": "Tüm ürünlere erişim için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Not Defteri\",\r\n    \"price\": 34.99,\r\n    \"stockQuantity\": 23\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"create"
+					]
+				},
+				"description": "Ürün eklemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ürün Adı\",\r\n    \"price\": 99.99,\r\n    \"stockQuantity\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"create"
+					]
+				},
+				"description": "Ürün eklemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "updateProductById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Soru Kitabı\",\r\n    \"price\": 155.99,\r\n    \"stockQuantity\": 41\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/products/2/update",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"2",
+						"update"
+					]
+				},
+				"description": "Ürün güncellemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProductById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/products/delete/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"delete",
+						"2"
+					]
+				},
+				"description": "Ürün silmek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "getCartById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/carts/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carts",
+						"2"
+					]
+				},
+				"description": "Tek bir sepete erişim için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "createCartForCustomerById",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/carts/1/create-cart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carts",
+						"1",
+						"create-cart"
+					]
+				},
+				"description": "Bir müşteriye bir sepet oluşturmak için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "emptyCartById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"productId\": 1,\r\n    \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/carts/2/empty",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carts",
+						"2",
+						"empty"
+					]
+				},
+				"description": "Sepeti boşaltmak için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "getCartItemById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cartItems/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"1"
+					]
+				},
+				"description": "Tek bir sepet ürününe erişim için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCartItems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cartItems/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"all"
+					]
+				},
+				"description": "Tüm sepete ürünlerine erişim için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "addProductToCartItem1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cartId\": 2,\r\n    \"productId\": 1,\r\n    \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cartItems/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"add"
+					]
+				},
+				"description": "Sepete ürün eklemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "addProductToCartItem2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cartId\": 2,\r\n    \"productId\": 2,\r\n    \"quantity\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cartItems/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"add"
+					]
+				},
+				"description": "Sepete ürün eklemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "addProductToCartItem3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cartId\": 2,\r\n    \"productId\": 1,\r\n    \"quantity\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cartItems/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"add"
+					]
+				},
+				"description": "Sepete ürün eklemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "updateCartItemById",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantity\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/cartItems/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"update",
+						"1"
+					]
+				},
+				"description": "Sepetteki ürünü güncellemek için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "emptyCartItemById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cartItems/3/empty",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"3",
+						"empty"
+					]
+				},
+				"description": "Sepetteki belirli bir ürünün miktar ve fiyatını kaldırmak için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "removeProductFromCartByCartAndCartItemId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cartItems/2/remove-product/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"2",
+						"remove-product",
+						"3"
+					]
+				},
+				"description": "Sepetteki belirli bir ürünü sepetten kaldırmak için kullanılacak olan request"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCartItemById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/cartItems/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cartItems",
+						"3"
+					]
+				},
+				"description": "Sepetteki belirli bir ürünü silmek için kullanılacak olan request"
+			},
+			"response": []
+		}
+	]
+}
