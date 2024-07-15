@@ -12,6 +12,7 @@ Müşteri eklemek için kullanılacak olan request
     "name": "Enes Horos",
     "email": "eneshoros@gmail.com"
 }
+```
 
 ---
 
@@ -44,6 +45,7 @@ Tüm ürünlere erişim için kullanılacak olan request
     "price": 34.99,
     "stockQuantity": 23
 }
+```
 
 ---
 
@@ -60,6 +62,7 @@ Tüm ürünlere erişim için kullanılacak olan request
     "price": 155.99,
     "stockQuantity": 41
 }
+```
 
 ---
 
@@ -100,6 +103,7 @@ Sepeti boşaltmak için kullanılacak olan request
     "productId": 1,
     "quantity": 2
 }
+```
 
 ---
 
@@ -132,6 +136,7 @@ Sepete ürün eklemek için kullanılacak olan request
     "productId": 1,
     "quantity": 2
 }
+```
 
 ---
 
@@ -146,6 +151,7 @@ Sepetteki ürünü güncellemek için kullanılacak olan request
 {
     "quantity": 1
 }
+```
 
 ---
 
@@ -170,5 +176,3 @@ Sepetteki belirli bir ürünü sepetten kaldırmak için kullanılacak olan requ
 **DELETE ** `localhost:8080/api/cartItems/1`
 
 Sepetteki belirli bir ürünü silmek için kullanılacak olan request
-
----
